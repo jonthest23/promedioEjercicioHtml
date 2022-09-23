@@ -1,44 +1,46 @@
 body{
-    display: flex;
-    justify-content: center;
-
-    height: 100vh;
     margin: unset;
 }
 .contenedor{
     display: flex;
     justify-content: center;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0px 0px 16px 1px;
     
-    width: 80vw;
+    width: 100vw;
     height: 70vh;
-    max-width: 900px;
-    position: absolute;
-    top: 130px;
+    
 }
 .divForm{
-    width: 30%;
-    max-width: 180px;
-    margin: 10px;
+
+    height: fit-content;
     padding: 10px;
-    padding-top: 0;
-    border-radius: 10px;
+    border-radius: 15px;
+    align-items: center;
+    max-width: 250px;
+    min-height: 170px;
+    max-height: 250px;
+    justify-content: center;
+    box-shadow: 0 1px 0 1px;
     
-    
+}
+
+.divForm h2{
+    margin-top: 25px;
+    text-align: center;
+    margin: 0px;
+    margin-bottom:10px;
     
 }
 .divForm form {
     height: 65%;
-    min-height: 170px;
-    max-height: 250px;
+    
     display: grid;
+    width: 100%;
+    
 }
 .divForm form input{
     background-color: unset;
     border: 0px;
-    border-bottom: 1px solid springgreen;
+    border-bottom: 1px solid rgb(0, 0, 0);
 
 
 }
@@ -54,46 +56,61 @@ body{
 }
 .divForm form div button{
     border-radius: 4px;
-    border: none;
+    border: 1px solid;
     padding: 10px 20px 10px 20px;
     margin-top: 20px;
-}
-
-
-.divForm form div:first-of-type{
-    text-align: center;
-    margin-top: 0;
-    background-color: aquamarine;
-    
     
 }
+.divForm form div button:hover{
+    background-color: rgb(169, 169, 169);
+}
+
 
 .divForm form div:last-of-type{
      display: flex;
-     align-items: flex-end;
-     justify-content: end;
+     justify-content: center;
+
 }
 .divTable{
+
     margin: 10px;
     width: 70% ;
+    max-width: 1000px;
+    min-width: 400px;
 
 }
 
 .divTable table{
     width: 100%;
+    column-span: 2 2;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
 .divTable table thead{
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.349);
+    font-weight: 600;
 }
 
 .divTable table, th , td {
-    border: 1px solid;
-    border-collapse: collapse;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+   
 }
 
+.divTable table tr:nth-child(even) {
+    background-color: #a6a6a6;
+  }
+
 #titulo{
-    position: absolute;
-    z-index: 1;
-    top: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    place-items: center;
+    height: 80px;
+    font-weight: 900;
+    font-size: xx-large;
+    margin-bottom: 20px;
+    border-bottom: 1px solid;
 }
+  
