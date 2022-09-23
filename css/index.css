@@ -1,0 +1,63 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.contenedor{
+    display: flex;
+
+    
+    width: 80vw;
+    height: 40vh;
+}
+.divForm{
+    width: 50%;
+    max-width: 180px;
+    margin: 10px;
+    
+}
+.divForm form {
+    height: 65%;
+    min-height: 170px;
+    max-height: 250px;
+    display: grid;
+}
+.divForm form input{
+    
+
+
+}
+.divform form button{
+    border-radius: 5px;
+    margin: 10px;
+}
+
+
+.divForm form div{
+    text-align: center;
+    border: 1px solid;
+}
+.divForm form div:first-of-type{
+    background-color: rgba(107, 107, 107, 0.85)
+    
+}
+.divTable{
+    margin: 10px;
+    width: 50% ;
+
+}
+
+.divTable table{
+    width: 100%;
+}
+.divTable table thead{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.349);
+}
+
+.divTable table, th , td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
