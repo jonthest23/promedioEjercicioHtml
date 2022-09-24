@@ -1,5 +1,6 @@
 body{
     margin: unset;
+    height: 100vh;
 }
 .contenedor{
     display: flex;
@@ -10,23 +11,24 @@ body{
     
 }
 .divForm{
-
+    position: relative;
     height: fit-content;
     padding: 10px;
     border-radius: 15px;
     align-items: center;
     max-width: 250px;
     min-height: 170px;
-    max-height: 250px;
+    max-height: 300px;
     justify-content: center;
-    box-shadow: 0 1px 0 1px;
+    border: 1px solid;
+
     
 }
 
 .divForm h2{
-    margin-top: 25px;
+    margin: unset;
+    margin-top: 40px;
     text-align: center;
-    margin: 0px;
     margin-bottom:10px;
     
 }
@@ -73,10 +75,10 @@ body{
 }
 .divTable{
 
-    margin: 10px;
     width: 70% ;
     max-width: 1000px;
     min-width: 400px;
+    margin: 10px 30px 10px 30px;
 
 }
 
@@ -86,6 +88,7 @@ body{
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    
 }
 .divTable table thead{
     font-weight: 600;
@@ -110,7 +113,67 @@ body{
     height: 80px;
     font-weight: 900;
     font-size: xx-large;
-    margin-bottom: 20px;
-    border-bottom: 1px solid;
+    margin-bottom: 30px;
+    background-color: #a6a6a6;
 }
-  
+
+.pie-de-pag{
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    height: 50px;
+    background-color: #a6a6a6;
+    width: 100vw;
+    align-content: center;
+    justify-content: center;
+    place-items: center;
+
+
+}
+
+.divimg{
+    position: absolute;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -30px;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 60px;
+    border: 1px solid;
+}
+.divimg img{
+    min-width: 10px;
+
+}
+#anuncio{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+#anuncio div{
+    display: none;
+    width: 50%;
+    padding: 12px;
+    max-width: 600px;
+    min-width: 300px;
+    background-color: rgba(255, 60, 0, 0.325);
+    border-radius: 5px;
+
+}
+#anuncio div span{
+    float: right;
+
+}
+#anuncio div span:hover{
+    color: aliceblue;
+    cursor: pointer;
+    
+}
+.divTable button {
+    padding: 10px;
+    margin: 15px;
+    float: right;
+}
