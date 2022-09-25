@@ -1,0 +1,20 @@
+h1{
+    font-family: 'Cairo Play', cursive;
+    font-size: 55px;
+
+}
+
+h2{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    margin: unset;
+}
+h5{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin: 5px;
+}
+button{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+}
+

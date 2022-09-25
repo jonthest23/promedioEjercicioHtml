@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang = "es">
     <head>
+        <link rel = "icon" href = "https://cdn-icons-png.flaticon.com/512/25/25694.png" type = "image/x-icon">
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Promediar</title>
         <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/modal.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@900&family=Montserrat:wght@300;400&family=Noto+Color+Emoji&family=Yanone+Kaffeesatz:wght@200;300;400&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <div id = "titulo">
-        Nota Estudiante
+        <h1>Nota Estudiante</h1>
         </div>
         <div id = "anuncio">
             <div>
-            No hay ningun estudiante selecionado
-            <span>x</span>
+            No hay ningun estudiante selecionado, crealo 
+            <span onclick="cerrarAnuncio()">x</span>
             </div>
         </div>
 
@@ -25,35 +32,41 @@
                     <img src="img/Person.jpg">
                 </div>
                 <h2>DATOS ESTUDIANTE</h2>
-                <form>
-                    <div>
+                
+                    <h5>
                         Nombre
-                    </div>
+                    </h5>
                     
-                        <input type="text" disabled>
+                        <label id="lblNombre">
+                            XXXXXXXXXXXXX
+                        </label>
                     
-                    <div>
+                    <h5>
                         Materia
-                    </div>
+                    </h5>
                     
-                        <input type="text" disabled>
+                        <label id="lblMateria">
+                            XXXXXXXXXXXXX
+                        </label>
                     
-                    <div>
+                    <h5>
                         Programa
-                    </div>
+                    </h5>
                     
-                        <input type="text" disabled>
+                        <label id="lblPrograma">
+                            XXXXXXXXXXXXX
+                        </label>
                     
                     <div>
-                        <button>Enviar</button>
+                        <button id = "btnModal" onclick="mostrarModal()">Crear</button>
                     </div>
-                </form>
+                
                 
                     
             </div>
         
             <div class="divTable">
-                <table>
+                <table id="tablaDatos">
                     <thead>
                         <tr>
                             <td>
@@ -67,20 +80,64 @@
                     <tbody>
 
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                Promedio
+                            </td>
+                            <td id="promedio">
+                                0
+                            </td>
+                        </tr>
+                    </tfoot>
                     
 
                 </table>
-                <button>
-                    registar
+                <button onclick="agregarNotas()" id="btnRegistrar" disabled>
+                    Registar
                 </button>
             </div>
         </div>
 
         <div class="pie-de-pag">
-            Esto se miraba muy vacio XD © Derechos reservados o algo asi
+            © Hola, esto estaba muy vacio 
         </div>
 
-        <script href = "js/index.js"></script>
+
+        <div class="modal modal-esconde" id="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Registrar Persona</h2>
+                    <span onclick="cerrarModal()">x</span>
+                </div>
+                <div class="modal-body">
+                    <form id="form">
+                        <h5>
+                            Nombre
+                        </h5>
+                        <input type="text" name="Nombre" required>
+                        <h5>
+                            Materia
+                        </h5>
+                        <input type="text" name="Materia" equired>
+                        <h5>
+                            Programa
+                        </h5>
+                        <select name="Programa" required>
+                  
+                            <option value="0">Multimedia</option>
+                      
+                            <option value="1">Otra</option>
+                      
+                        </select>
+                        <div class="divBtnRegistar">
+                            <button id="btn">Registrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        <script src="js/index.js"></script>
 
 
     </body>

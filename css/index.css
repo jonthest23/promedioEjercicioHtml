@@ -1,10 +1,12 @@
 body{
     margin: unset;
-    height: 100vh;
+    width: 100vw;
+    min-width: fit-content;
 }
 .contenedor{
     display: flex;
     justify-content: center;
+    min-width: fit-content;
     
     width: 100vw;
     height: 70vh;
@@ -17,58 +19,54 @@ body{
     border-radius: 15px;
     align-items: center;
     max-width: 250px;
+    min-width: 200px;
     min-height: 170px;
     max-height: 300px;
     justify-content: center;
     border: 1px solid;
+    margin-left: 10px;
 
     
 }
 
 .divForm h2{
-    margin: unset;
     margin-top: 40px;
     text-align: center;
     margin-bottom:10px;
     
 }
-.divForm form {
-    height: 65%;
-    
-    display: grid;
-    width: 100%;
-    
-}
-.divForm form input{
-    background-color: unset;
+
+.divForm label{
     border: 0px;
-    border-bottom: 1px solid rgb(0, 0, 0);
+    margin: 5px;
+    width: 100%;
+    text-align: center;
 
 
 }
-.divform form button{
+.divform button{
     border-radius: 5px;
     margin: 10px;
 }
 
 
-.divForm form div{
+.divForm div{
     margin: 5px 0 5px 0;
     
 }
-.divForm form div button{
+.divForm div button{
     border-radius: 4px;
     border: 1px solid;
     padding: 10px 20px 10px 20px;
     margin-top: 20px;
     
 }
-.divForm form div button:hover{
+.divForm div button:hover{
     background-color: rgb(169, 169, 169);
 }
 
 
-.divForm form div:last-of-type{
+.divForm div:last-of-type, .divBtnRegistar{
      display: flex;
      justify-content: center;
 
@@ -83,11 +81,10 @@ body{
 }
 
 .divTable table{
-    width: 100%;
-    column-span: 2 2;
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    min-width: 450px;
     
 }
 .divTable table thead{
@@ -106,6 +103,8 @@ body{
   }
 
 #titulo{
+    position: sticky;
+    left: 0px;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -115,6 +114,8 @@ body{
     font-size: xx-large;
     margin-bottom: 30px;
     background-color: #a6a6a6;
+    width: 100vw;
+    
 }
 
 .pie-de-pag{
@@ -154,7 +155,6 @@ body{
     justify-content: center;
 }
 #anuncio div{
-    display: none;
     width: 50%;
     padding: 12px;
     max-width: 600px;
