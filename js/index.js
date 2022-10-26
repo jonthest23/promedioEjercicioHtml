@@ -4,17 +4,13 @@ var indexEstudianteMod;
 let estudiantes = [];
 
 document.getElementById("btn").addEventListener("click", (e) => {
-    if(validarDatos()){
-        
+    
+    if(validarDatos()){    
         estudiante = {
             Nombre: form["Nombre"].value,
             Materia: form["Materia"].value,
             Programa: form["Programa"].value,
-            nota : {
-                nombre: [],
-                nota: []
-            }
-            
+            nota : []    
         }  
         estudiantes.push(estudiante); 
         document.getElementById("btnRegistrar").disabled = false;
@@ -65,9 +61,12 @@ function registrarNota(){
         
     }else{
         var ultimo = tabla.getElementsByTagName("tbody")[0].getElementsByTagName("tr")
-        estudiantes[indexEstudianteMod].nota.nota.push(document.getElementById("notaActividad").value);
-        estudiantes[indexEstudianteMod].nota.nombre.push(document.getElementById("textoActividad").value);
-        ultimo = ultimo[ultimo.length - 1].innerHTML = '<td>' + document.getElementById("textoActividad").value + '</td>' + '<td>' + document.getElementById("notaActividad").value + '</td>'+ '<td style = "display: none; padding: 0px;"><button class = "eliminarRegistro" onClick = "eliminarRegistro('+(estudiantes[indexEstudianteMod].nota.nota.length - 1) +')"> E </button> </td>';
+        let nota = {
+            actividad: document.getElementById("textoActividad").value,
+            nota: document.getElementById("notaActividad").value
+        }
+        estudiantes[indexEstudianteMod].nota.push(nota);
+        ultimo = ultimo[ultimo.length - 1].innerHTML = '<td>' + document.getElementById("textoActividad").value + '</td>' + '<td>' + document.getElementById("notaActividad").value + '</td>'+ '<td style = "display: none; padding: 0px;"><button class = "eliminarRegistro" onClick = "eliminarRegistro('+(estudiantes[indexEstudianteMod].nota.length - 1) +')"> E </button> </td>';
         document.getElementById("btnRegistrar").onclick = agregarNotas;
         
         calcularPromedio();
@@ -77,11 +76,11 @@ function registrarNota(){
 
 function calcularPromedio(){
     var suma = 0;
-    for(var i = 0; i < estudiantes[indexEstudianteMod].nota.nota.length; i++){
-        suma += parseFloat(estudiantes[indexEstudianteMod].nota.nota[i]);
+    for(var i = 0; i < estudiantes[indexEstudianteMod].nota.length; i++){
+        suma += parseFloat(estudiantes[indexEstudianteMod].nota[i].nota);
     }
-    if(estudiantes[indexEstudianteMod].nota.nota.length > 0){
-    let promedio = suma / estudiantes[indexEstudianteMod].nota.nota.length;
+    if(estudiantes[indexEstudianteMod].nota.length > 0){
+    let promedio = suma / estudiantes[indexEstudianteMod].nota.length;
     document.getElementById("promedio").innerText = promedio.toFixed(2);
     }else{
         document.getElementById("promedio").innerText = 0;
@@ -121,10 +120,10 @@ function ocultarBotonesEliminar(){
 
 function eliminarRegistro(notaIndex){
 
-    if((estudiantes[indexEstudianteMod].nota.nota.length-1) >= notaIndex){
+    if((estudiantes[indexEstudianteMod].nota.length-1) >= notaIndex){
     tabla.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[notaIndex].remove();
-    estudiantes[indexEstudianteMod].nota.nota.splice(notaIndex,1);
-    estudiantes[indexEstudianteMod].nota.nombre.splice(notaIndex,1);
+    estudiantes[indexEstudianteMod].nota.splice(notaIndex,1);
+    
     }
     calcularPromedio();
     actulizarTabla();
@@ -133,8 +132,8 @@ function eliminarRegistro(notaIndex){
 
 function actulizarTabla(){
     tabla.getElementsByTagName("tbody")[0].innerHTML = "";
-    for(var i = 0; i < estudiantes[indexEstudianteMod].nota.nota.length; i++){
-        tabla.getElementsByTagName("tbody")[0].innerHTML += '<tr><td>' + estudiantes[indexEstudianteMod].nota.nombre[i] + '</td><td>' + estudiantes[indexEstudianteMod].nota.nota[i] + '</td><td style = "display: none; padding: 0px;"><button class = "eliminarRegistro" onClick = "eliminarRegistro('+i+')"> E </button> </td></tr>';
+    for(var i = 0; i < estudiantes[indexEstudianteMod].nota.length; i++){
+        tabla.getElementsByTagName("tbody")[0].innerHTML += '<tr><td>' + estudiantes[indexEstudianteMod].nota[i].actividad + '</td><td>' + estudiantes[indexEstudianteMod].nota[i].nota + '</td><td style = "display: none; padding: 0px;"><button class = "eliminarRegistro" onClick = "eliminarRegistro('+i+')"> E </button> </td></tr>';
     }
     ocultarBotonesEliminar();
 
